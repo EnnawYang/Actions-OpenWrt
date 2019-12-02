@@ -25,9 +25,9 @@
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
 # 最新版argon主题
-git clone https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
 # 删除自带argon主题
-rm -rf package/lean/luci-theme-argon
+#rm -rf package/lean/luci-theme-argon
 
 # Server酱-微信提醒
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
