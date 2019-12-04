@@ -36,7 +36,7 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
 # AdGuardHome-Luci安装控制界面
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luci-app-adguardhome
+git clone https://github.com/adamw92/luci-app-adguardhome package/mine/luci-app-adguardhome
 
 # Clash-Luci安装控制界面,支持ssr
 git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
