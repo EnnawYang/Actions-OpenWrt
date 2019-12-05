@@ -21,8 +21,11 @@
 # 修改wifi名称
 #sed -i 's/OpenWrt/OpenWrt_x86/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# 防火墙wan口入站数据修改成ACCEPT(第21行)
+# 防火墙wan口入站数据修改成ACCEPT(第21行)。如您的网络是公网，建议注释掉此项。
 sed -i '21s/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
+
+# 允许远程主机连接到本地 SSH 转发端口。如您的网络是公网，建议注释掉此项。
+#sed -i "4a\ \toption GatewayPorts 'on'" package/network/services/dropbear/files/dropbear.config
 
 # atmaterial主题
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
