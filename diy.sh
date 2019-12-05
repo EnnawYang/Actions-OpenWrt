@@ -21,6 +21,9 @@
 # 修改wifi名称
 #sed -i 's/OpenWrt/OpenWrt_x86/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+# 防火墙wan口入站数据修改成ACCEPT(第21行)
+sed -i '21s/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
+
 # atmaterial主题
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
