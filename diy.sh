@@ -7,7 +7,7 @@
 #=================================================
 
 # 修改机器名称
-#sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 
 # 修改网址
 #sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
@@ -41,8 +41,12 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 # App过滤
 git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
-# AdGuardHome-Luci安装控制界面
-git clone https://github.com/adamw92/luci-app-adguardhome package/mine/luci-app-adguardhome
+# AdGuardHome-Luci安装控制界面,仅luci界面
+#git clone https://github.com/adamw92/luci-app-adguardhome package/mine/luci-app-adguardhome
 
-# Clash-Luci安装控制界面,支持ssr
-git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
+# AdGuardHome + luci界面
+git clone https://github.com/happyzhang1995/openwrt-adguardhome package/mine/adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luci-app-adguardhome
+
+# Clash-Luci安装控制界面,支持ssr,仅luci界面
+#git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
