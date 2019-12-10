@@ -1,20 +1,20 @@
 #=================================================
-# Description: Build OpenWrt using GitHub Actions
+# Description: Build OpenWrt using GitHub Actions(macOS)
 # Lisence: MIT
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt
+name: Build OpenWrt (macOS)
 
 on: 
   release:
     types: [published]
-#  push:
-#    branches: 
-#      - master
-#    paths:
-#      - '.config'
+  push:
+    branches: 
+      - master
+    paths:
+      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
@@ -22,46 +22,31 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: macos-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@master
 
     - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi `docker images -q`
-        echo "Deleting files, please wait ..."
-        sudo rm -rf \
-          /usr/share/dotnet \
-          /etc/mysql \
-          /etc/php
-        sudo -E apt-get -y purge \
-          azure-cli \
-          ghc* \
-          zulu* \
-          hhvm \
-          llvm* \
-          firefox \
-          google* \
-          dotnet* \
-          powershell \
-          openjdk* \
-          mysql* \
-          php*
-        sudo -E apt-get update
-        sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler
-        sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get clean
+        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep wget quilt xz gnu-sed
+        brew ln gnu-getopt --force
+        hdiutil create -size 60g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
+        hdiutil attach OpenWrt.sparseimage
+        echo "::add-path::/usr/local/opt/gnu-getopt/bin"
+        echo "::add-path::/usr/local/opt/coreutils/libexec/gnubin"
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
 
     - name: Clone source code
+      working-directory: /Volumes/OpenWrt
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
-        REPO_BRANCH: master
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        REPO_URL: https://github.com/openwrt/openwrt
+        REPO_BRANCH: openwrt-18.06
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        ln -sf /Volumes/OpenWrt/openwrt $GITHUB_WORKSPACE/openwrt
+        gsed -i "s/grep Apple.LLVM/grep -E 'Apple.(LLVM|clang)'/g" openwrt/include/prereq-build.mk
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -77,8 +62,9 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_SH
+        mv $DIY_SH openwrt
         cd openwrt
-        ../$DIY_SH
+        ./$DIY_SH
         make defconfig
 
 #    - name: SSH connection to Actions
@@ -102,14 +88,14 @@ jobs:
         cd openwrt
         make -j1 V=s
 
-    - name : Upload packages
+    - name: Upload packages
       uses: actions/upload-artifact@master
       if: always()
       with:
         name: OpenWrt packages
         path: openwrt/bin/packages
 
-    - name : Upload targets
+    - name: Upload targets
       uses: actions/upload-artifact@master
       if: always()
       with:
