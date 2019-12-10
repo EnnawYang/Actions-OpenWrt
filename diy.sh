@@ -30,23 +30,44 @@ sed -i "4a\ \toption GatewayPorts 'on'" package/network/services/dropbear/files/
 # atmaterial主题
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
-# 最新版argon主题
+# new argon theme
 #git clone https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
 # 删除自带argon主题
 #rm -rf package/lean/luci-theme-argon
 
-# Server酱-微信提醒
+# Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 
-# App过滤
+# OpenAppFilter(luci-app-oaf)
 git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
 # AdGuardHome-Luci安装控制界面,仅luci界面
 #git clone https://github.com/adamw92/luci-app-adguardhome package/mine/luci-app-adguardhome
 
-# AdGuardHome + luci界面
+# AdGuardHome + luci
 git clone https://github.com/happyzhang1995/openwrt-adguardhome package/mine/adguardhome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luci-app-adguardhome
 
-# Clash-Luci安装控制界面,支持ssr,仅luci界面
+# Clash-Luci,support ssr
 #git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
+
+# Lienol-package
+git clone https://github.com/Lienol/openwrt-package package/Lienol-package
+# https://github.com/Lienol/openwrt-package/issues/54
+rm -rf package/Lienol-package/Lienol/chinadns
+rm -rf package/Lienol-package/Lienol/dns-forwarder
+rm -rf package/Lienol-package/Lienol/v2ray
+rm -rf package/Lienol-package/Lienol/openssl1.1
+rm -rf package/Lienol-package/Lienol/trojan
+rm -rf package/Lienol-package/Lienol/shadowsocks-libev-new
+rm -rf package/Lienol-package/Lienol/shadowsocksr-libev
+rm -rf package/Lienol-package/Lienol/pdnsd-alt
+rm -rf package/Lienol-package/Lienol/kcptun
+rm -rf package/Lienol-package/Lienol/verysync
+rm -rf package/Lienol-package/Lienol/luci-app-kodexplorer
+rm -rf package/Lienol-package/Lienol/luci-app-pppoe-relay
+rm -rf package/Lienol-package/Lienol/luci-app-pptp-server
+rm -rf package/Lienol-package/Lienol/luci-app-v2ray-server
+rm -rf package/Lienol-package/Lienol/luci-app-verysync
+rm -rf package/Lienol-package/Lienol/luci-app-ramfree
+rm -rf package/Lienol-package/Lienol/luci-app-passwall
