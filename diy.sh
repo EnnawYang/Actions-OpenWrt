@@ -55,4 +55,4 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luc
 git clone https://github.com/Lienol/openwrt-package package/Lienol-package
 # https://github.com/Lienol/openwrt-package/issues/54
 cd package/Lienol-package/lienol
-rm -rf chinadns dns-forwarder v2ray openssl1.1 trojan shadowsocks-libev-new shadowsocksr-libev pdnsd-alt kcptun verysync luci-app-kodexplorer luci-app-pppoe-relay luci-app-pptp-server luci-app-v2ray-server luci-app-verysync luci-app-ramfree luci-app-passwall
+rm -rf chinadns dns-forwarder v2ray openssl1.1 trojan shadowsocks-libev-new shadowsocksr-libev pdnsd-alt kcptun-client verysync luci-app-kodexplorer luci-app-kcptun luci-app-pppoe-relay luci-app-pptp-server luci-app-v2ray-server luci-app-verysync luci-app-ramfree luci-app-passwall
