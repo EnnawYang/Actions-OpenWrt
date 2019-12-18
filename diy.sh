@@ -45,8 +45,8 @@ git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 #git clone https://github.com/adamw92/luci-app-adguardhome package/mine/luci-app-adguardhome
 
 # AdGuardHome + luci
-git clone https://github.com/happyzhang1995/openwrt-adguardhome package/mine/adguardhome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luci-app-adguardhome
+#git clone https://github.com/happyzhang1995/openwrt-adguardhome package/mine/adguardhome
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/mine/luci-app-adguardhome
 
 # Clash-Luci,support ssr
 #git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
