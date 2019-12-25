@@ -62,7 +62,7 @@ cp -r package/Lienol-package/lienol/luci-theme-argon-mod package/mine/luci-theme
 cp -r package/Lienol-package/lienol/luci-theme-netgear-mc package/mine/luci-theme-netgear-mc
 cp package/Lienol-package/lienol/luci_my.mk package/mine
 cp -r package/Lienol-package/package/brook package/mine/brook
-cp -r package/Lienol-package/package/chinadns package/mine/chinadns
+cp -r package/Lienol-package/package/chinadns-ng package/mine/chinadns-ng
 cp -r package/Lienol-package/package/dns2socks package/mine/dns2socks
 cp -r package/Lienol-package/package/tcping package/mine/tcping
 rm -rf package/Lienol-package
