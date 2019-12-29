@@ -60,7 +60,7 @@ cp -r package/Lienol-package/lienol/luci-app-passwall package/mine/luci-app-pass
 cp -r package/Lienol-package/lienol/luci-theme-argon-mod package/mine/luci-theme-argon-mod
 #cp -r package/Lienol-package/lienol/luci-theme-bootstrap-mod package/mine/luci-theme-bootstrap-mod
 cp -r package/Lienol-package/lienol/luci-theme-netgear-mc package/mine/luci-theme-netgear-mc
-cp package/Lienol-package/lienol/luci_my.mk package/mine
+#cp package/Lienol-package/lienol/luci_my.mk package/mine
 cp -r package/Lienol-package/package/brook package/mine/brook
 cp -r package/Lienol-package/package/chinadns-ng package/mine/chinadns-ng
 cp -r package/Lienol-package/package/dns2socks package/mine/dns2socks
