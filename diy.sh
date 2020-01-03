@@ -51,6 +51,10 @@ git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 # Clash-Luci,support ssr
 #git clone https://github.com/frainzy1477/luci-app-clash package/mine/luci-app-clash
 
+# DiskMan for LuCI (WIP)
+git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
+mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
+
 # Lienol-package
 git clone https://github.com/Lienol/openwrt-package package/Lienol-package
 # https://github.com/Lienol/openwrt-package/issues/54
