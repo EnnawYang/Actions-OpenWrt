@@ -55,6 +55,10 @@ git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
 mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
 
+# Docker Engine API for LuCI
+git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
+git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-dockerman
+
 # Lienol-package
 git clone https://github.com/Lienol/openwrt-package package/Lienol-package
 # https://github.com/Lienol/openwrt-package/issues/54
