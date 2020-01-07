@@ -76,4 +76,4 @@ cp -r package/Lienol-package/package/tcping package/mine/tcping
 rm -rf package/Lienol-package
 
 # luci-app-vssr
-git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
+#git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
