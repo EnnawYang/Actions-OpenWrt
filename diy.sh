@@ -74,3 +74,6 @@ cp -r package/Lienol-package/package/chinadns-ng package/mine/chinadns-ng
 cp -r package/Lienol-package/package/dns2socks package/mine/dns2socks
 cp -r package/Lienol-package/package/tcping package/mine/tcping
 rm -rf package/Lienol-package
+
+# luci-app-vssr
+git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
