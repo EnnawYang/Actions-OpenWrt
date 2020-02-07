@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt x86
+name: Build OpenWrt Pi4B
 
 on:
   release:
