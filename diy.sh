@@ -76,5 +76,13 @@ mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makef
 #cp -r package/Lienol-package/package/tcping package/mine/tcping
 #rm -rf package/Lienol-package
 
+# svn Lienol's apps & themes
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassistant package/mine/luci-app-fileassistant
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-dark-mod package/mine/luci-theme-argon-dark-mod
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-light-mod package/mine/luci-theme-argon-light-mod
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-netgear-mc package/mine/luci-theme-netgear-mc
+
+
 # luci-app-vssr
 #git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
