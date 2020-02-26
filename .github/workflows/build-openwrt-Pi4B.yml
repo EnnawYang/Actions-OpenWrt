@@ -10,16 +10,16 @@ name: Build OpenWrt Pi4B
 
 on:
   release:
-    types: [published]
+    types: published
 #  push:
-#    branches: 
+#    branches:
 #      - master
 #    paths:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
-#    types: [started]
+#    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -34,6 +34,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     - name: Checkout
@@ -102,7 +103,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory

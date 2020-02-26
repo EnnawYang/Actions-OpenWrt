@@ -10,21 +10,12 @@ name: Build OpenWrt x86
 
 on:
   release:
-<<<<<<< HEAD
-    types: [published]
+    types: published
 #  push:
-#    branches: 
+#    branches:
 #      - master
 #    paths:
 #      - '.config'
-=======
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - '.config'
->>>>>>> upstream/master
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
