@@ -10,16 +10,25 @@ name: Build OpenWrt x86
 
 on:
   release:
+<<<<<<< HEAD
     types: [published]
 #  push:
 #    branches: 
 #      - master
 #    paths:
 #      - '.config'
+=======
+    types: published
+  push:
+    branches:
+      - master
+    paths:
+      - '.config'
+>>>>>>> upstream/master
 #  schedule:
 #    - cron: 0 8 * * 5
 #  watch:
-#    types: [started]
+#    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -34,6 +43,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     - name: Checkout
@@ -102,7 +112,7 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
 
     - name: Upload firmware directory
