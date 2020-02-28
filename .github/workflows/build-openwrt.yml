@@ -112,3 +112,6 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
+
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x86_64编译完成
