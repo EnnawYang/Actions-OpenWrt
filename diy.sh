@@ -30,6 +30,9 @@
 # atmaterial主题
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
+# Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
+git clone https://github.com/rosywrt/luci-theme-rosy package/rosy
+
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 
