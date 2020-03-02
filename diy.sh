@@ -7,19 +7,13 @@
 #=================================================
 
 # 修改机器名称
-#sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 
 # 修改网址
 #sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
 
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
-
-#去除默认bootstrap主题
-#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
-
-# 修改wifi名称
-#sed -i 's/OpenWrt/OpenWrt_x86/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 防火墙wan口入站数据修改成ACCEPT(第21行)。如您的网络是公网，建议注释掉此项。
 #sed -i '21s/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
@@ -35,6 +29,8 @@ git clone https://github.com/rosywrt/luci-theme-rosy package/rosy
 
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
+# 修改读取温度文件为/sys/class/hwmon/hwmon1/temp*_input
+sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
 
 # OpenAppFilter(luci-app-oaf)
 git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
@@ -43,24 +39,7 @@ git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
 mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
 
-# Lienol-package
-#git clone https://github.com/Lienol/openwrt-package package/Lienol-package
-## https://github.com/Lienol/openwrt-package/issues/54
-#cp -r package/Lienol-package/lienol/luci-app-fileassistant package/mine/luci-app-fileassistant
-#cp -r package/Lienol-package/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
-#cp -r package/Lienol-package/lienol/luci-app-passwall package/mine/luci-app-passwall
-#cp -r package/Lienol-package/lienol/luci-theme-argon-dark-mod package/mine/luci-theme-argon-dark-mod
-#cp -r package/Lienol-package/lienol/luci-theme-argon-light-mod package/mine/luci-theme-argon-light-mod
-##cp -r package/Lienol-package/lienol/luci-theme-bootstrap-mod package/mine/luci-theme-bootstrap-mod
-#cp -r package/Lienol-package/lienol/luci-theme-netgear-mc package/mine/luci-theme-netgear-mc
-##cp package/Lienol-package/lienol/luci_my.mk package/mine
-#cp -r package/Lienol-package/package/brook package/mine/brook
-#cp -r package/Lienol-package/package/chinadns-ng package/mine/chinadns-ng
-#cp -r package/Lienol-package/package/dns2socks package/mine/dns2socks
-#cp -r package/Lienol-package/package/tcping package/mine/tcping
-#rm -rf package/Lienol-package
-
-# svn Lienol's apps & themes
+# svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassistant package/mine/luci-app-fileassistant
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-dark-mod package/mine/luci-theme-argon-dark-mod
