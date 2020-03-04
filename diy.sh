@@ -44,7 +44,6 @@ svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassis
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-dark-mod package/mine/luci-theme-argon-dark-mod
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-argon-light-mod package/mine/luci-theme-argon-light-mod
-svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-theme-netgear-mc package/mine/luci-theme-netgear-mc
 
 
 # luci-app-vssr
