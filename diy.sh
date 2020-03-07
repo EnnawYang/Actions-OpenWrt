@@ -25,7 +25,7 @@ sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
 # Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
-git clone https://github.com/rosywrt/luci-theme-rosy package/rosy
+git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
