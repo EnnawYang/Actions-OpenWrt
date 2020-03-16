@@ -7,7 +7,7 @@
 #=================================================
 
 # 修改机器名称
-sed -i 's/OpenWrt/RaspberryPi4B/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/newifi-d2/g' package/base-files/files/bin/config_generate
 
 # 修改网址
 #sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
@@ -27,18 +27,6 @@ git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-the
 # Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
 git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
-# Serverchan
-git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
-
-# OpenAppFilter(luci-app-oaf)
-git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
-
-# DiskMan for LuCI (WIP)
-git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
-mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
-
 # svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
 
-# luci-app-vssr
-#git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
