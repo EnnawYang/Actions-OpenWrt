@@ -28,5 +28,5 @@ git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-the
 git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
 # svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
-svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
+# svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
 
