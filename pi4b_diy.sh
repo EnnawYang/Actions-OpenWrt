@@ -38,7 +38,5 @@ git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskm
 mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
 
 # svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
-svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
+# svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
 
-# luci-app-vssr
-#git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
