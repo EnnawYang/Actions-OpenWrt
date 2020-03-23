@@ -34,8 +34,8 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
 # DiskMan for LuCI (WIP)
-git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
-mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
+# git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
+# mkdir -p package/mine/parted && cp -i package/mine/luci-app-diskman/Parted.Makefile package/mine/parted/Makefile
 
 # svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
 # svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
