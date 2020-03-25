@@ -33,7 +33,7 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
 
 # OpenAppFilter(luci-app-oaf)
-git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
+# git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
 # DiskMan for LuCI (WIP)
 # git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman

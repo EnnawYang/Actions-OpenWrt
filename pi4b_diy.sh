@@ -31,7 +31,7 @@ git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 
 # OpenAppFilter(luci-app-oaf)
-git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
+# git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
 # DiskMan for LuCI (WIP)
 # git clone https://github.com/lisaac/luci-app-diskman package/mine/luci-app-diskman
