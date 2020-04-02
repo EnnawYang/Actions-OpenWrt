@@ -114,13 +114,11 @@ jobs:
         name: OpenWrt_firmware
         path: ${{ env.FIRMWARE }}
 
-<<<<<<< HEAD
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x86_64编译完成
-=======
     - name: Upload firmware to cowtransfer
       if: env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
       run: |
         curl -sL https://git.io/cowtransfer | sh
         ./cowtransfer-uploader -s -p 8 ${FIRMWARE}
->>>>>>> upstream/master
+
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=x86_64编译完成
