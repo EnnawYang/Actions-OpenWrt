@@ -119,6 +119,6 @@ jobs:
       run: |
         curl -sL https://git.io/cowtransfer | sh
         ./cowtransfer-uploader -b 2621440 -s -p 99 -t 3 --hash ${FIRMWARE}
-	
+
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=RaspberryPi4B编译完成
