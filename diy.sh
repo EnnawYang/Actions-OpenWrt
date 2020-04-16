@@ -32,6 +32,9 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 # 修改读取温度文件为/sys/class/hwmon/hwmon1/temp*_input
 sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
 
+# luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
+
 # OpenAppFilter(luci-app-oaf)
 # git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 

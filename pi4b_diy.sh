@@ -30,6 +30,9 @@ git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 
+# luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
+
 # OpenAppFilter(luci-app-oaf)
 # git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
 
