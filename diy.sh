@@ -30,7 +30,7 @@ git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 # 修改读取温度文件为/sys/class/hwmon/hwmon1/temp*_input
-sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
+# sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
 
 # luci-app-ssr-plus
 git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
