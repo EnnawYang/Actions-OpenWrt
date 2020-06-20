@@ -14,6 +14,10 @@
 # 修改机器名称
 sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 
+# 替换Lienol的可道云
+rm -rf package/lean/luci-app-kodexplorer
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
+
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
 
