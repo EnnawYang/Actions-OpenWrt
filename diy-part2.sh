@@ -19,9 +19,9 @@ rm -rf package/lean/luci-app-kodexplorer
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
 
 # 替换nodejs
-rm -rf package/feeds/packages/node
-rm -rf package/feeds/packages/node-*
-git clone -b openwrt-18.06 https://github.com/nxhack/openwrt-node-packages package/mine/openwrt-node-packages
+# rm -rf package/feeds/packages/node
+# rm -rf package/feeds/packages/node-*
+# git clone -b openwrt-18.06 https://github.com/nxhack/openwrt-node-packages package/mine/openwrt-node-packages
 
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
