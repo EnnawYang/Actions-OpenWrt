@@ -24,7 +24,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-kodexplor
 # git clone -b openwrt-18.06 https://github.com/nxhack/openwrt-node-packages package/mine/openwrt-node-packages
 
 # 更改默认主题
-#sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
+#sed -i 's/config internal themes/config internal themes\n    option Rosy  \"\/luci-static\/rosy\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
 
 # 防火墙wan口入站数据修改成ACCEPT(第21行)。如您的网络是公网，建议注释掉此项。
 #sed -i '21s/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
