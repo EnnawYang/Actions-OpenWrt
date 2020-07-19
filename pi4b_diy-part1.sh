@@ -33,8 +33,8 @@ git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webda
 git lone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
 
 # Luci for JD dailybonus Script for Openwrt
-# git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
-# git clone https://github.com/jerrykuku/node-request package/mine/node-request
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
+git clone https://github.com/jerrykuku/node-request package/mine/node-request
 
 # OpenAppFilter(luci-app-oaf)
 # git clone https://github.com/destan19/OpenAppFilter package/mine/OpenAppFilter
