@@ -33,6 +33,9 @@ git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 # openwrt-gowebdav
 git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webdav
 
+# OpenClash
+git clone -b master https://github.com/vernesong/OpenClash package/mine/OpenClash
+
 # A tele-aria2 bot for openwrt
 git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
 
