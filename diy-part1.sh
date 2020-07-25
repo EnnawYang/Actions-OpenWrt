@@ -20,7 +20,11 @@
 # git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
 # Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
-git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
+# git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
+
+# luci-theme-argon for 18.06 by jerrykuku
+rm -rf package/lean/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
 
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
@@ -35,6 +39,9 @@ git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webda
 
 # OpenClash
 git clone -b master https://github.com/vernesong/OpenClash package/mine/OpenClash
+pushd package/mine/OpenClash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
 
 # A tele-aria2 bot for openwrt
 git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
