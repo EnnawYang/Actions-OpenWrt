@@ -20,7 +20,7 @@
 # git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
 # Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
-git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
+# git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
 # luci-app-ssr-plus
 git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
