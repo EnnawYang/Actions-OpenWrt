@@ -46,6 +46,9 @@ popd
 # A tele-aria2 bot for openwrt
 git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
 
+# flowerss-bot
+git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowerss-bot-openwrt
+
 # Luci for JD dailybonus Script for Openwrt
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/node-request package/mine/node-request
