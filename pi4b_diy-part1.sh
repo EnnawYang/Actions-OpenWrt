@@ -36,10 +36,10 @@ git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webdav
 
 # OpenClash
-git clone -b master https://github.com/vernesong/OpenClash package/mine/OpenClash
-pushd package/mine/OpenClash/luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
+# git clone -b master https://github.com/vernesong/OpenClash package/mine/OpenClash
+# pushd package/mine/OpenClash/luci-app-openclash/tools/po2lmo
+# make && sudo make install
+# popd
 
 # A tele-aria2 bot for openwrt
 git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
