@@ -17,7 +17,7 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # atmaterial主题
-# git clone https://github.com/Mrbai98/luci-theme-atmaterial package/mine/luci-theme-atmaterial
+# git clone https://github.com/yangsongli/luci-theme-atmaterial package/mine/luci-theme-atmaterial
 
 # Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
 # git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
