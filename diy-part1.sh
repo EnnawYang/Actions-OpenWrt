@@ -34,6 +34,10 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 # luci-app-ssr-plus
 git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 
+# luci-app-vssr
+git clone https://github.com/jerrykuku/lua-maxminddb package/mine/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
+
 # openwrt-gowebdav
 git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webdav
 
