@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  TARGET_NAME: NeWIFI-D2
+  TARGET_NAME: NeWIFI_D2
   CONFIG_FILE: newifi-d2.config 
   DIY_P1_SH: newifi-d2_part1.sh 
   DIY_P2_SH: newifi-d2_part2.sh 
@@ -195,4 +195,4 @@ jobs:
     - name: WeChat Notification
       if: steps.organize.outputs.status == 'success' && !cancelled()
       run: |
-        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="$TARGET_NAME 编译完成"
+        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="$TARGET_NAME"编译完成
