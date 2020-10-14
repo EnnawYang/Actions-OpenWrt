@@ -26,6 +26,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
     - name: Remove old Artifacts
       uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
