@@ -33,5 +33,5 @@ jobs:
       uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
         age: '1 day'
-        skip-recent: 0
+        skip-recent: 1
 
