@@ -21,6 +21,11 @@ on:
 #  schedule:
 #    - cron: 0 8 * * 5
 
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
     - name: Remove old Artifacts
       uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
