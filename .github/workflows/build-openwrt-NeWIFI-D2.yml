@@ -181,7 +181,7 @@ jobs:
       uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
         age: '1 day'
-        skip-recent: 6
+        skip-recent: 3
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
