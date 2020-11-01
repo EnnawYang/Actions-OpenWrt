@@ -30,7 +30,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/mine/lu
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 
 # serverchand
-git clone https://github.com/zzsj0928/luci-app-serverchand package/mine/luci-app-serverchand
+# git clone https://github.com/zzsj0928/luci-app-serverchand package/mine/luci-app-serverchand
 
 # luci-app-ssr-plus
 git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
