@@ -49,5 +49,5 @@ git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
 
 # luci-app-poweroff by eSir
-https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
+git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
 

@@ -54,4 +54,4 @@ git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowers
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
 
 # luci-app-poweroff by eSir
-https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
+git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
