@@ -55,3 +55,7 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-
 
 # luci-app-poweroff by eSir
 git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
+
+# Luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-dockerman
+git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
