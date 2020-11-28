@@ -18,7 +18,7 @@ sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 
 # 替换Lienol的可道云
 rm -rf package/lean/luci-app-kodexplorer
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
 
 # 替换nodejs
 # rm -rf package/feeds/packages/node

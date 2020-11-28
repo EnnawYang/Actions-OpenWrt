@@ -22,7 +22,7 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 
 # 替换Lienol的可道云
 rm -rf package/lean/luci-app-kodexplorer
-svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-kodexplorer package/lean/luci-app-kodexplorer
 
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Rosy  \"\/luci-static\/rosy\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
