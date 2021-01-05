@@ -45,10 +45,10 @@ git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webdav
 
 # A tele-aria2 bot for openwrt
-git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
+# git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
 
 # flowerss-bot
-git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowerss-bot-openwrt
+# git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowerss-bot-openwrt
 
 # Luci for JD dailybonus Script for Openwrt
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
