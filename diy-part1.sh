@@ -50,9 +50,6 @@ git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webda
 # flowerss-bot
 # git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowerss-bot-openwrt
 
-# Luci for JD dailybonus Script for Openwrt
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/mine/luci-app-jd-dailybonus
-
 # luci-app-poweroff by eSir
 git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
 
