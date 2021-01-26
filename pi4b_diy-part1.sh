@@ -48,3 +48,9 @@ git clone https://github.com/project-openwrt/openwrt-gowebdav package/mine/webda
 # luci-app-poweroff by eSir
 git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
 
+# rtl8812au-ac USB Wi-Fi adapter driver
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rtl8812au-ac package/mine/rtl8812au-ac
+
+# rtl8821cu USB Wi-Fi adapter driver
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rtl8821cu package/mine/rtl8821cu
+
