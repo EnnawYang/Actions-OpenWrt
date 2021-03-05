@@ -16,6 +16,18 @@
 # 修改机器名称
 sed -i 's/OpenWrt/Redmi-AC2100/g' package/base-files/files/bin/config_generate
 
+# atmaterial主题
+# git clone https://github.com/yangsongli/luci-theme-atmaterial package/mine/luci-theme-atmaterial
+
+# Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
+# git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
+
+# luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
+
+# svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
+# svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser
+
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
 

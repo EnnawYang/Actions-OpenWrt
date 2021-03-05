@@ -16,14 +16,3 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
-# atmaterial主题
-# git clone https://github.com/yangsongli/luci-theme-atmaterial package/mine/luci-theme-atmaterial
-
-# Rosy Theme for LuCI [ OpenWrt-18.06 Branch Only ]
-# git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
-
-# luci-app-ssr-plus
-git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
-
-# svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
-# svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser

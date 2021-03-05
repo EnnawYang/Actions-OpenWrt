@@ -191,6 +191,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: WeChat Notification
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="$TARGET_NAME"编译完成
