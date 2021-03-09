@@ -29,6 +29,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-kodexplorer pack
 # luci-theme-argon for 18.06 by jerrykuku
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config package/mine/luci-app-argon-config
 
 # Serverchan
 git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
