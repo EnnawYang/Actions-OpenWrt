@@ -23,10 +23,10 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  TARGET_NAME: github.event.inputs.name
-  CONFIG_FILE: "$TARGET_NAME".config
-  DIY_P1_SH: "$TARGET_NAME"-part1.sh
-  DIY_P2_SH: "$TARGET_NAME"-part2.sh
+#  TARGET_NAME: ${{ github.event.inputs.name }}
+#  CONFIG_FILE: "$TARGET_NAME".config
+#  DIY_P1_SH: "$TARGET_NAME"-part1.sh
+#  DIY_P2_SH: "$TARGET_NAME"-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -65,9 +65,9 @@ jobs:
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        chmod +x ${{ github.event.inputs.name }}-part1.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/${{ github.event.inputs.name }}-part1.sh
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -78,10 +78,10 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
+        [ -e ${{ github.event.inputs.name }}.config ] && mv ${{ github.event.inputs.name }}.config openwrt/.config
+        chmod +x ${{ github.event.inputs.name }}-part2.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        $GITHUB_WORKSPACE/${{ github.event.inputs.name }}-part2.sh
 
     - name: Download package
       id: package
@@ -152,7 +152,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$TARGET_NAME-$(date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::${{ github.event.inputs.name }}-$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
