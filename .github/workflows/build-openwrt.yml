@@ -186,4 +186,4 @@ jobs:
     - name: WeChat Notification
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="$TARGET_NAME"编译完成
+        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ github.event.inputs.name }}编译完成
