@@ -32,6 +32,9 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
+  WeChat_Notification: true
+  TG_Notification: true
+  TG_DISABLE_NOTIFICATION: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -184,6 +187,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: WeChat Notification
-      if: steps.compile.outputs.status == 'success' && !cancelled()
+      if: steps.compile.outputs.status == 'success' && env.WeChat_Notification == 'true' && !cancelled()
       run: |
-        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ github.event.inputs.name }}编译完成
+        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="${{ github.event.inputs.name }} 编译完成"
+
+    - name: Telegram Notification
+      env:
+        TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+        ID: ${{ secrets.TG_CHAT_ID }}
+        URL: "https://api.telegram.org/bot$TOKEN/sendMessage"
+      if: steps.compile.outputs.status == 'success' && env.TG_Notification == 'true' && !cancelled()
+      run: |
+        curl -s -X POST $URL -d chat_id=$ID -d text="${{ github.event.inputs.name }} 编译完成" disable_notification=$TG_DISABLE_NOTIFICATION
