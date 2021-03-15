@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: '输入机型名称，并且要存在此机型配置文件'
+        description: '机型名称：x86_64 | rpi-4b | newifi-d2 | redmi-AC2100'
         required: true
         default: 'x86_64'
 
