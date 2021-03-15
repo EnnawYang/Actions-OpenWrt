@@ -188,7 +188,7 @@ jobs:
     - name: WeChat Notification
       if: steps.compile.outputs.status == 'success' && env.WeChat_Notification == 'true' && !cancelled()
       run: |
-        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text="${{ github.event.inputs.name }} 编译完成"
+        curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=${{ github.event.inputs.name }}编译完成
 
     - name: Telegram Notification
       if: steps.compile.outputs.status == 'success' && env.TG_Notification == 'true' && !cancelled()
