@@ -62,10 +62,10 @@ git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-doc
 git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
 
 # rtl8812au-ac USB Wi-Fi adapter driver
-svn co https://github.com/immortalwrt/openwrt/branches/master/package/ctcgfw/rtl8812au-ac package/mine/rtl8812au-ac
+svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8812au-ac package/mine/rtl8812au-ac
 
 # rtl8821cu USB Wi-Fi adapter driver
-svn co https://github.com/immortalwrt/openwrt/branches/master/package/ctcgfw/rtl8821cu package/mine/rtl8821cu
+svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8821cu package/mine/rtl8821cu
 
 # 更改默认主题
 #sed -i 's/config internal themes/config internal themes\n    option Rosy  \"\/luci-static\/rosy\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
