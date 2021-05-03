@@ -150,6 +150,18 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
 
+    - name: Upload firmware to Google Drive
+      env:
+        RCLONE_NAME: ${{ secrets.RCLONE_NAME }}
+      if: env.RCLONE_NAME != null
+      run: |
+        curl https://rclone.org/install.sh | sudo bash
+        mkdir -p ~/.config/rclone/
+        cat << EOF > ~/.config/rclone/rclone.conf
+        ${{ secrets.RCLONE_CONFIG }}
+        EOF
+        rclone copy ${{ env.FIRMWARE }} ${{ secrets.RCLONE_NAME }}:openwrt/${{ github.event.inputs.name }}/$(date +"%Y-%m-%d-%H%M") --transfers=8
+
     - name: Generate release tag
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
