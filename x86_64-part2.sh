@@ -62,6 +62,9 @@ git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-
 git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-dockerman
 git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
 
+# luci-app-unblockneteasemusic from immortalwrt
+git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/mine/luci-app-unblockneteasemusic
+
 # rtl8812au-ac USB Wi-Fi adapter driver
 svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8812au-ac package/mine/rtl8812au-ac
 
