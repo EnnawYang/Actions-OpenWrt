@@ -23,7 +23,7 @@ sed -i 's/OpenWrt/newifi-D2/g' package/base-files/files/bin/config_generate
 # git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
 # luci-app-ssr-plus
-git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
+# git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 
 # svn Lienol's apps & themes，https://github.com/Lienol/openwrt-package
 # svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-filebrowser package/mine/luci-app-filebrowser

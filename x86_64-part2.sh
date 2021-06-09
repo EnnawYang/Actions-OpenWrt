@@ -17,8 +17,8 @@
 sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
 
 # 替换Lienol的可道云
-rm -rf package/lean/luci-app-kodexplorer
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-kodexplorer package/lean/luci-app-kodexplorer
+# rm -rf package/lean/luci-app-kodexplorer
+# svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-kodexplorer package/lean/luci-app-kodexplorer
 
 # atmaterial主题
 # git clone https://github.com/yangsongli/luci-theme-atmaterial package/mine/luci-theme-atmaterial
@@ -27,12 +27,12 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-kodexplorer pack
 # git clone https://github.com/rosywrt/luci-theme-rosy package/mine/rosy
 
 # luci-theme-argon for 18.06 by jerrykuku
-rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config package/mine/luci-app-argon-config
+# rm -rf package/lean/luci-theme-argon
+# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/mine/luci-theme-argon
+# git clone https://github.com/jerrykuku/luci-app-argon-config package/mine/luci-app-argon-config
 
 # Serverchan
-git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
+# git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-serverchan
 # 修改读取温度文件为/sys/class/hwmon/hwmon1/temp*_input
 # sed -i 's/\/sys\/class\/thermal\/thermal_zone\*\/temp/\/sys\/class\/hwmon\/hwmon1\/temp\*_input/g' package/mine/luci-app-serverchan/root/usr/bin/serverchan/serverchan
 
@@ -40,14 +40,14 @@ git clone https://github.com/tty228/luci-app-serverchan package/mine/luci-app-se
 # git clone https://github.com/zzsj0928/luci-app-serverchand package/mine/luci-app-serverchand
 
 # luci-app-ssr-plus
-git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
+# git clone https://github.com/fw876/helloworld package/mine/luci-app-ssr-plus
 
 # luci-app-vssr
 # git clone https://github.com/jerrykuku/lua-maxminddb package/mine/lua-maxminddb
 # git clone https://github.com/jerrykuku/luci-app-vssr package/mine/luci-app-vssr
 
 # openwrt-gowebdav
-git clone https://github.com/immortalwrt/openwrt-gowebdav package/mine/webdav
+# git clone https://github.com/immortalwrt/openwrt-gowebdav package/mine/webdav
 
 # A tele-aria2 bot for openwrt
 # git clone https://github.com/EnnawYang/tele-aria2-openwrt package/mine/tele-aria2-openwrt
@@ -56,20 +56,20 @@ git clone https://github.com/immortalwrt/openwrt-gowebdav package/mine/webdav
 # git clone https://github.com/EnnawYang/flowerss-bot-openwrt package/mine/flowerss-bot-openwrt
 
 # luci-app-poweroff by eSir
-git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
+# git clone https://github.com/esirplayground/luci-app-poweroff package/mine/luci-app-poweroff
 
 # Luci-app-dockerman
-git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-dockerman
-git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
+# git clone https://github.com/lisaac/luci-app-dockerman package/mine/luci-app-dockerman
+# git clone https://github.com/lisaac/luci-lib-docker package/mine/luci-lib-docker
 
 # luci-app-unblockneteasemusic from immortalwrt
-git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/mine/luci-app-unblockneteasemusic
+# git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/mine/luci-app-unblockneteasemusic
 
 # rtl8812au-ac USB Wi-Fi adapter driver
-svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8812au-ac package/mine/rtl8812au-ac
+# svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8812au-ac package/mine/rtl8812au-ac
 
 # rtl8821cu USB Wi-Fi adapter driver
-svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8821cu package/mine/rtl8821cu
+# svn co https://github.com/immortalwrt/openwrt/branches/master/package/kernel/rtl8821cu package/mine/rtl8821cu
 
 # 替换nodejs
 # rm -rf package/feeds/packages/node
