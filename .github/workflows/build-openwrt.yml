@@ -20,8 +20,8 @@ on:
         default: 'x86_64'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-18.06-k5.4
   FEEDS_CONF: feeds.conf.default
 #  TARGET_NAME: ${{ github.event.inputs.name }}
 #  CONFIG_FILE: "$TARGET_NAME".config
