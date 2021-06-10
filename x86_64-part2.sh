@@ -14,7 +14,7 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 # 修改机器名称
-sed -i 's/OpenWrt/OpenWrt_x86/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/x86_64/g' package/base-files/files/bin/config_generate
 
 # 替换Lienol的可道云
 # rm -rf package/lean/luci-app-kodexplorer

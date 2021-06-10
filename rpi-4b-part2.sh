@@ -14,7 +14,7 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 # 修改机器名称
-sed -i 's/OpenWrt/RaspberryPi4B/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/RaspberryPi4B/g' package/base-files/files/bin/config_generate
 
 # This script is only for Raspberry Pi 4 , fix wifi on first boot , Thanks @xmapst
 # sed -i 's/36/44/g;s/VHT80/VHT20/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
