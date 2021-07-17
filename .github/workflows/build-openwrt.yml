@@ -14,23 +14,26 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+      name:
+        description: '机型名称：x86_64 | rpi-4b | newifi-d2 | redmi-AC2100'
+        required: true
+        default: 'x86_64'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-18.06-k5.4
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: false
+#  TARGET_NAME: ${{ github.event.inputs.name }}
+#  CONFIG_FILE: "$TARGET_NAME".config
+#  DIY_P1_SH: "$TARGET_NAME"-part1.sh
+#  DIY_P2_SH: "$TARGET_NAME"-part2.sh
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
+  WeChat_Notification: true
+  TG_Notification: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -64,9 +67,9 @@ jobs:
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        chmod +x ${{ github.event.inputs.name }}-part1.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/${{ github.event.inputs.name }}-part1.sh
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -77,17 +80,10 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
+        [ -e ${{ github.event.inputs.name }}.config ] && mv ${{ github.event.inputs.name }}.config openwrt/.config
+        chmod +x ${{ github.event.inputs.name }}-part2.sh
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
-
-    - name: SSH connection to Actions
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      env:
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        $GITHUB_WORKSPACE/${{ github.event.inputs.name }}-part2.sh
 
     - name: Download package
       id: package
@@ -154,11 +150,23 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
 
+    - name: Upload firmware to Google Drive
+      env:
+        RCLONE_NAME: ${{ secrets.RCLONE_NAME }}
+      if: env.RCLONE_NAME != null
+      run: |
+        curl https://rclone.org/install.sh | sudo bash
+        mkdir -p ~/.config/rclone/
+        cat << EOF > ~/.config/rclone/rclone.conf
+        ${{ secrets.RCLONE_CONFIG }}
+        EOF
+        rclone copy ${{ env.FIRMWARE }} ${{ secrets.RCLONE_NAME }}:openwrt/${{ github.event.inputs.name }}/$(date +"%Y-%m-%d-%H%M") --transfers=8
+
     - name: Generate release tag
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::${{ github.event.inputs.name }}-$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
@@ -184,7 +192,17 @@ jobs:
       uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 3
+        keep_latest: 10
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: WeChat Notification
+      if: steps.compile.outputs.status == 'success' && env.WeChat_Notification == 'true' && !cancelled()
+      run: |
+        curl https://sctapi.ftqq.com/${{ secrets.SCTKEY }}.send?title=${{ github.event.inputs.name }}编译完成
+
+    - name: Telegram Notification
+      if: steps.compile.outputs.status == 'success' && env.TG_Notification == 'true' && !cancelled()
+      run: |
+        curl -s -X POST https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage -d chat_id=${{ secrets.TG_CHAT_ID }} -d text="${{ github.event.inputs.name }} 编译完成"
